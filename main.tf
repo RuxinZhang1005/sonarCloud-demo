@@ -16,5 +16,8 @@ resource "azurerm_storage_account" "example_sa" {
   location                 = azurerm_resource_group.example_rg.location
   account_tier             = "Standard"
   account_replication_type = "LRS"  # Locally redundant storage
+  identity {
+    type = "SystemAssigned"
+  }
 }
 
